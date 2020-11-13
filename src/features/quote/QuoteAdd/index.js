@@ -13,7 +13,7 @@ import {
   // setCarType,
   setPublishedInsurer,
   // setHistoryInsurance,
-} from '../../../redux/InSurace/actions'
+} from '../../../redux/Insurance/actions'
 import ManageQuoteTap from '../components/ManageQuoteTap'
 
 const defaultTabs = [

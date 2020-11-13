@@ -6,7 +6,7 @@ import CarQuoteCrossYearReducer from "./CarQuoteCrossYear/reducer";
 import CarSubModelReducer from "./CarSubModel/reducer";
 import CarTypeReducer from "./CarType/reducer";
 import CarYearReducer from "./CarYear/reducer";
-import InSurace from "./InSurace/reducer"
+import Insurance from "./Insurance/reducer"
 import PublishedInsurerReducer from "./PublishedInsurer/reducer";
 
 const rootReducer = combineReducers({
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   carSubModel: CarSubModelReducer,
   carType: CarTypeReducer,
   carYear: CarYearReducer,
-  inSurace: InSurace,
+  inSurace: Insurance,
   publishedInsurerReducer: PublishedInsurerReducer,
 });
 
