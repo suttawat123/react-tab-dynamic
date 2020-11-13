@@ -5,7 +5,7 @@ import { Text } from "../../../../component/Text";
 
 class FindBrand extends React.Component {
   render() {
-    console.log('....' +this.props.inSurance);
+    console.log("....", this.props.inSurance);
     return (
       <React.Fragment>
         FindBrand
@@ -27,7 +27,7 @@ class FindBrand extends React.Component {
                     : false
                 }
                 onClick={() => {
-                  this.props.onSelected(element.carbrandname);
+                  this.props.onSelected(element.carbrandid);
                 }}
                 externalFooter={<Text.H5>{element.carbrandname}</Text.H5>}
               >
