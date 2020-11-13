@@ -1,15 +1,23 @@
 import { createStore,  } from "redux";
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'
 import { composeWithDevTools } from "redux-devtools-extension";
+import createFilter from 'redux-persist-transform-filter';
+import storage from 'redux-persist/lib/storage';
 
 import rootReducer from "./rootReducer";
 
+const saveSubsetFilter = createFilter(
+  'inSurance',
+  ['HistoryInsurance'],
+);
+
 const persistConfig = {
-  key: 'inSurance',
-  whitelist: ['HistoryInsurance'],
+  key: 'history-insurancee',
+  whitelist: ['inSurance'],
   storage,
+  transforms: [saveSubsetFilter],
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default function configurationStore() {
