@@ -4,9 +4,8 @@ import { Container } from "../../../../component/Container";
 import { Text } from "../../../../component/Text";
 
 class FindBrand extends React.Component {
-  
   render() {
-    console.log(this.props.inSurance)
+    console.log("....", this.props.inSurance);
     return (
       <React.Fragment>
         FindBrand
@@ -22,15 +21,23 @@ class FindBrand extends React.Component {
                 key={index}
                 externalId="brand"
                 id={index}
-                // isActive={element.carbrandid === this.props.inSurance.carbrandid}
+                isActive={
+                  this.props.inSurance !== undefined
+                    ? element.carbrandid === this.props.inSurance.carbrandid
+                    : false
+                }
                 onClick={() => {
-                  this.props.onSelected(element.carbrandname);
+                  this.props.onSelected(element.carbrandid);
                 }}
                 externalFooter={<Text.H5>{element.carbrandname}</Text.H5>}
               >
                 {/*eslint-disable-next-line*/}
                 <img
-                  src={element.url === "" ? "https://cr.lnwfile.com/0glheu.jpg" : element.url}
+                  src={
+                    element.url === ""
+                      ? "https://cr.lnwfile.com/0glheu.jpg"
+                      : element.url
+                  }
                   style={{ width: 150, height: 150 }}
                 />
               </Container.Content>

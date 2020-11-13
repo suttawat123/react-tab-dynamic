@@ -15,6 +15,13 @@ import {
   // setHistoryInsurance,
 } from "../../../redux/Insurance/actions";
 import ManageQuoteTap from "../components/ManageQuoteTap";
+import { fetchCarBrand } from "../../../redux/CarBrand/actions";
+import { fetchCarModel } from "../../../redux/CarModel/actions";
+import { fetchCarProvince } from "../../../redux/CarProvince/actions";
+import { fetchCarQuoteCrossYear } from "../../../redux/CarQuoteCrossYear/actions";
+import { fetchCarSubModel } from "../../../redux/CarSubModel/actions";
+import { fetchCarType } from "../../../redux/CarType/actions";
+import { fetchCarYear } from "../../../redux/CarYear/actions";
 
 const defaultTabs = [
   {
@@ -44,7 +51,7 @@ class QuoteAdd extends React.Component {
     currentTabID: null,
     data: [],
     loading: false,
-    inSurance: {},
+    inSurance: this.props.inSurance,
   };
 
   componentDidMount() {
@@ -58,38 +65,11 @@ class QuoteAdd extends React.Component {
     this.fecthDataForTab(showTabs[0]);
   }
 
-  // clearInsurace(prevTabID, currentTabID) {
-  //   // TODO: handle not found
-  //   const {
-  //     setCarBrand,
-  //     setCarModel,
-  //     setCarYear,
-  //     setCarSubModel,
-  //     setCarProvince,
-  //   } = this.props
-  //   const startIndex = this.state.showTabs.find(tabID => tabID === startID)
-
-  //   for (let index = startIndex; index >= 1; index--) {
-  //     switch (index) {
-  //       case 1:
-  //         setCarBrand()
-  //       case 2:
-
-  //       case 3:
-  //       case 4:
-  //       case 5:
-  //       default:
-  //         console.warn('[clearInsurace] not found startID:', startID)
-  //     }
-  //   }
-  // }
-
   fecthDataForTab = (tabID) => {
     this.setState(
       {
         loading: true,
         data: [],
-        inSurance: {},
       },
       () => {
         const {
@@ -98,7 +78,6 @@ class QuoteAdd extends React.Component {
           carYear,
           carSubModel,
           carProvince,
-          inSurance,
         } = this.props;
 
         switch (tabID) {
@@ -106,28 +85,28 @@ class QuoteAdd extends React.Component {
             this.setState({
               data: carBrand,
               loading: false,
-              inSurance: inSurance,
+              // inSurance: inSurance,
             });
             break;
           case 2:
             this.setState({
               data: carModel,
               loading: false,
-              inSurance: inSurance,
+              // inSurance: inSurance,
             });
             break;
           case 3:
             this.setState({
               data: carYear,
               loading: false,
-              inSurance: inSurance,
+              // inSurance: inSurance,
             });
             break;
           case 4:
             this.setState({
               data: carSubModel,
               loading: false,
-              inSurance: inSurance,
+              // inSurance: inSurance,
             });
             break;
           case 5:
@@ -154,10 +133,18 @@ class QuoteAdd extends React.Component {
       setCarYear,
       setCarSubModel,
       setCarProvince,
+      fetchCarBrand,
+      fetchCarModel,
+      fetchCarProvince,
+      fetchCarQuoteCrossYear,
+      fetchCarSubModel,
+      fetchCarType,
+      fetchCarYear,
     } = this.props;
 
     switch (tabID) {
       case 1:
+        // fetchCarBrand(payload);
         setCarBrand(payload);
         break;
       case 2:
@@ -189,6 +176,7 @@ class QuoteAdd extends React.Component {
           data={data}
           loading={loading}
           showTabs={this.props.inSurance.showTabs}
+          inSurance={this.props.inSurance}
         />
       </React.Fragment>
     );
@@ -225,6 +213,13 @@ const mapDispatchToProps = (dispatch) =>
       setCarYear,
       setCarSubModel,
       setCarProvince,
+      fetchCarBrand,
+      fetchCarModel,
+      fetchCarProvince,
+      fetchCarQuoteCrossYear,
+      fetchCarSubModel,
+      fetchCarType,
+      fetchCarYear,
     },
     dispatch
   );

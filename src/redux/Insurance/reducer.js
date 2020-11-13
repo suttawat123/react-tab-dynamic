@@ -21,6 +21,7 @@ const INITIAL_STATE = {
     caryear: 0, //ปีรุ่น
     carmodelid: "", //รุ่นย่อย
     provinceid: 0, //จังหวัด
+    submodel: "",
   },
   HistoryInsurance: [],
 };
@@ -36,7 +37,7 @@ const InsuranceReducer = (state = INITIAL_STATE, action) => {
     case SET_SHOW_TABS:
       return {
         ...state,
-        FindInsurance: { ...state.FindInsurance, showTabs: action.payload }
+        FindInsurance: { ...state.FindInsurance, showTabs: action.payload },
       };
 
     case SET_CAR_BRAND:
@@ -60,7 +61,7 @@ const InsuranceReducer = (state = INITIAL_STATE, action) => {
     case SET_CAR_SUB_MODEL:
       return {
         ...state,
-        FindInsurance: { ...state.FindInsurance, carmodelid: action.payload },
+        FindInsurance: { ...state.FindInsurance, submodel: action.payload },
       };
 
     case SET_CAR_QUOTE_CROSS_YEAR:

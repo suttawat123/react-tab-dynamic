@@ -43,7 +43,7 @@ const INITIAL_STATE = {
 const CarModelReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_CAR_MODEL:
-      var data = state.dataCarModel.filter(c => c.cartypeid === action.cartypeid);
+      var data = state.dataCarModel.filter(c => c.carbrandid === action.carbrandid);
       return {
         ...state,
         dataCarModel: data,
