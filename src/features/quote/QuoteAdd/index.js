@@ -101,6 +101,7 @@ class QuoteAdd extends React.Component {
           inSurance,
         } = this.props;
 
+        console.log(inSurance);
         switch (tabID) {
           case 1:
             this.setState({
