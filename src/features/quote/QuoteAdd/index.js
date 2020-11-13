@@ -15,6 +15,13 @@ import {
   // setHistoryInsurance,
 } from "../../../redux/Insurance/actions";
 import ManageQuoteTap from "../components/ManageQuoteTap";
+import { fetchCarBrand } from "../../../redux/CarBrand/actions";
+import { fetchCarModel } from "../../../redux/CarModel/actions";
+import { fetchCarProvince } from "../../../redux/CarProvince/actions";
+import { fetchCarQuoteCrossYear } from "../../../redux/CarQuoteCrossYear/actions";
+import { fetchCarSubModel } from "../../../redux/CarSubModel/actions";
+import { fetchCarType } from "../../../redux/CarType/actions";
+import { fetchCarYear } from "../../../redux/CarYear/actions";
 
 const defaultTabs = [
   {
@@ -126,10 +133,18 @@ class QuoteAdd extends React.Component {
       setCarYear,
       setCarSubModel,
       setCarProvince,
+      fetchCarBrand,
+      fetchCarModel,
+      fetchCarProvince,
+      fetchCarQuoteCrossYear,
+      fetchCarSubModel,
+      fetchCarType,
+      fetchCarYear,
     } = this.props;
 
     switch (tabID) {
       case 1:
+        // fetchCarBrand(payload);
         setCarBrand(payload);
         break;
       case 2:
@@ -198,6 +213,13 @@ const mapDispatchToProps = (dispatch) =>
       setCarYear,
       setCarSubModel,
       setCarProvince,
+      fetchCarBrand,
+      fetchCarModel,
+      fetchCarProvince,
+      fetchCarQuoteCrossYear,
+      fetchCarSubModel,
+      fetchCarType,
+      fetchCarYear,
     },
     dispatch
   );

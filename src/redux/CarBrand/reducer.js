@@ -29,6 +29,7 @@ const CarBrandReducer = (state = INITIAL_STATE, action) => {
       var data = state.dataCarBrand.filter(
         (c) => c.carbrandid === action.carbrandid
       );
+
       return {
         ...state,
         dataCarBrand: data,
