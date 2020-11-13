@@ -1,5 +1,6 @@
 import {
   SET_CAR_TYPE,
+  SET_SHOW_TABS,
   SET_CAR_SUB_MODEL,
   SET_CAR_QUOTE_CROSS_YEAR,
   SET_CAR_BRAND,
@@ -13,6 +14,13 @@ import {
 export const setCarBrand = (payload) => {
   return {
     type: SET_CAR_BRAND,
+    payload: payload,
+  };
+};
+
+export const setShowTabs = (payload) => {
+  return {
+    type: SET_SHOW_TABS,
     payload: payload,
   };
 };
