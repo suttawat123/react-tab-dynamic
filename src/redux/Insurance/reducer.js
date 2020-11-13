@@ -86,9 +86,10 @@ const InsuranceReducer = (state = INITIAL_STATE, action) => {
       };
 
     case SET_HISTORY_INSURANCE:
+      console.log('SET_HISTORY_INSURANCE reducer')
       return {
         ...state,
-        HistoryInsurance: state.HistoryInsurance.push(state.FindInsurance),
+        HistoryInsurance: [ ...state.HistoryInsurance, { ...state.FindInsurance }],
       };
 
     default:

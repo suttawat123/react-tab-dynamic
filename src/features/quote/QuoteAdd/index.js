@@ -15,6 +15,7 @@ import {
   // setHistoryInsurance,
 } from "../../../redux/Insurance/actions";
 import ManageQuoteTap from "../components/ManageQuoteTap";
+import { setHistoryInsurance } from "../../../redux/Insurance/actions"
 import { fetchCarBrand } from "../../../redux/CarBrand/actions";
 import { fetchCarModel } from "../../../redux/CarModel/actions";
 import { fetchCarProvince } from "../../../redux/CarProvince/actions";
@@ -164,6 +165,10 @@ class QuoteAdd extends React.Component {
     }
   };
 
+  // saveFinalResult = () => {
+  //   this.props.setHistoryInsurance()
+  // }
+
   render() {
     const { loading, data } = this.state;
     return (
@@ -172,6 +177,7 @@ class QuoteAdd extends React.Component {
         <ManageQuoteTap
           onSubmit={this.setData}
           onChangeTab={this.fecthDataForTab}
+          onFinalSubmit={this.props.setHistoryInsurance}
           defaultTabs={defaultTabs}
           data={data}
           loading={loading}
@@ -220,6 +226,7 @@ const mapDispatchToProps = (dispatch) =>
       fetchCarSubModel,
       fetchCarType,
       fetchCarYear,
+      setHistoryInsurance,
     },
     dispatch
   );
