@@ -1,9 +1,9 @@
 import { FETCH_CAR_BRAND,  } from "./types";
 
-export const fetchCarBrand = (cartypeid) => {
+export const fetchCarBrand = (carbrandid) => {
   return {
     type: FETCH_CAR_BRAND,
-    cartypeid: cartypeid,
+    carbrandid: carbrandid,
   };
 };
 

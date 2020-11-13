@@ -1,31 +1,39 @@
-import React from 'react'
-import Select from 'react-select'
-import PropTypes from 'prop-types'
+import React from "react";
+import Select from "react-select";
+import PropTypes from "prop-types";
 
 class FindOther extends React.Component {
   state = {
-    province: null
-  }
+    province: null,
+  };
 
   render() {
-    console.log(this.props.provinceOption)
     return (
       <React.Fragment>
         FindOther
-        <div style={{ display: 'flex', flexDirection: 'column', margin: '0 auto', width: '50%' }}>
-          {(this.props.loading)
-            ? <h1>Loading</h1>
-            : (
-              <React.Fragment>
-                <Select
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: "0 auto",
+            width: "50%",
+          }}
+        >
+          {this.props.loading ? (
+            <h1>Loading</h1>
+          ) : (
+            <React.Fragment>
+              <Select
                 onChange={(option) => {
-                  console.log(option)
-                  this.setState({ province: option.value })
+                  console.log(option);
+                  this.setState({ province: option.value });
                 }}
                 options={this.props.provinceOption}
               />
               <button
-                onClick={() => { this.props.onSelected(this.state.province) }}
+                onClick={() => {
+                  this.props.onSelected(this.state.province);
+                }}
               >
                 ตกลง
               </button>
@@ -33,7 +41,7 @@ class FindOther extends React.Component {
           )}
         </div>
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -46,12 +54,12 @@ FindOther.propTypes = {
     })
   ),
   onSelected: PropTypes.func,
-}
+};
 
 FindOther.defaultProps = {
   loading: true,
   provinceOption: [],
-  onSelected: () => { }
-}
+  onSelected: () => {},
+};
 
-export default FindOther
+export default FindOther;

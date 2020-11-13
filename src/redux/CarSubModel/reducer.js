@@ -84,7 +84,9 @@ const INITIAL_STATE = {
 const CarSubModelReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_CAR_SUB_MODEL:
-      var data = state.dataCarSubModel.filter(c => c.model === action.model && c.year === action.year);
+      var data = state.dataCarSubModel.filter(
+        (c) => c.submodel === action.submodel
+      );
       return {
         ...state,
         dataCarSubModel: data,
