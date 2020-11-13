@@ -1,4 +1,5 @@
 export const SET_CAR_TYPE = "SET_CAR_TYPE";
+export const SET_SHOW_TABS = "SET_SHOW_TABS";
 export const SET_CAR_SUB_MODEL = "SET_CAR_SUB_MODEL";
 export const SET_CAR_QUOTE_CROSS_YEAR = "SET_CAR_QUOTE_CROSS_YEAR";
 export const SET_CAR_MODEL = "SET_CAR_MODEL";

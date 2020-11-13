@@ -1,5 +1,6 @@
 import {
   SET_CAR_TYPE,
+  SET_SHOW_TABS,
   SET_CAR_SUB_MODEL,
   SET_CAR_QUOTE_CROSS_YEAR,
   SET_CAR_BRAND,
@@ -13,6 +14,7 @@ import {
 const INITIAL_STATE = {
   FindInsurance: {
     cartypeid: "", //ประเภทรถ
+    showTabs: [],
     carbrandid: "", //รหัส ยี่ห้อ
     brandname: "", //ยี่ห้อ
     modelname: "", //รุ่น
@@ -29,6 +31,12 @@ const CarBrandReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         FindInsurance: { ...state.FindInsurance, cartypeid: action.payload },
+      };
+
+    case SET_SHOW_TABS:
+      return {
+        ...state,
+        FindInsurance: { ...state.FindInsurance, showTabs: action.payload }
       };
 
     case SET_CAR_BRAND:
