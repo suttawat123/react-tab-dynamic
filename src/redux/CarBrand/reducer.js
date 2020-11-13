@@ -27,7 +27,7 @@ const CarBrandReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_CAR_BRAND:
       var data = state.dataCarBrand.filter(
-        (c) => c.cartypeid === action.cartypeid
+        (c) => c.carbrandid === action.carbrandid
       );
       return {
         ...state,
