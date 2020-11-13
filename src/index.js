@@ -6,7 +6,9 @@ import App from "./App";
 
 // REDUX
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import configurationStore from "./redux/configurationStore";
+
+const { store } = configurationStore();
 
 ReactDOM.render(
   <Provider store={store}>
