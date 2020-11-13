@@ -25,7 +25,7 @@ const INITIAL_STATE = {
   HistoryInsurance: [],
 };
 
-const CarBrandReducer = (state = INITIAL_STATE, action) => {
+const InsuranceReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SET_CAR_TYPE:
       return {
@@ -95,4 +95,4 @@ const CarBrandReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default CarBrandReducer;
+export default InsuranceReducer;
