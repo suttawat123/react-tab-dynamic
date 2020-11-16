@@ -63,10 +63,10 @@ class QuoteAdd extends React.Component {
       return;
     }
 
-    this.fecthDataForTab(showTabs[0]);
+    this.fetchDataForTab(showTabs[0]);
   }
 
-  fecthDataForTab = (tabID) => {
+  fetchDataForTab = (tabID) => {
     this.setState(
       {
         loading: true,
@@ -181,7 +181,7 @@ class QuoteAdd extends React.Component {
         QuoteAdd
         <ManageQuoteTap
           onSubmit={this.setData}
-          onChangeTab={this.fecthDataForTab}
+          onChangeTab={this.fetchDataForTab}
           onFinalSubmit={this.saveFinalSubmit}
           defaultTabs={defaultTabs}
           data={data}
