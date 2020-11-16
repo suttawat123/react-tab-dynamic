@@ -165,9 +165,14 @@ class QuoteAdd extends React.Component {
     }
   };
 
-  // saveFinalResult = () => {
-  //   this.props.setHistoryInsurance()
-  // }
+  saveFinalSubmit = () => {
+    const { historyInsurance, setHistoryInsurance } = this.props
+    setHistoryInsurance()
+    alert('Success!! See in console')
+    console.table(
+      historyInsurance.map((val) => ({ ...val, showTabs: val.showTabs.join(',')  })),
+    )
+  }
 
   render() {
     const { loading, data } = this.state;
@@ -177,7 +182,7 @@ class QuoteAdd extends React.Component {
         <ManageQuoteTap
           onSubmit={this.setData}
           onChangeTab={this.fecthDataForTab}
-          onFinalSubmit={this.props.setHistoryInsurance}
+          onFinalSubmit={this.saveFinalSubmit}
           defaultTabs={defaultTabs}
           data={data}
           loading={loading}
@@ -204,6 +209,7 @@ class QuoteAdd extends React.Component {
 const mapStateToProps = (state) => ({
   carType: state.carType.dataCarType,
   inSurance: state.inSurance.FindInsurance,
+  historyInsurance: state.inSurance.HistoryInsurance,
   carBrand: state.carBrand.dataCarBrand,
   carModel: state.carModel.dataCarModel,
   carYear: state.carYear.dataCarYear,
