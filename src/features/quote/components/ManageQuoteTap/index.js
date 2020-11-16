@@ -50,8 +50,8 @@ class Tab extends React.Component {
 
     if (currentPageIndex === this.state.tabList.length - 1) {
       // TODO: implement this
-      console.log('onFinalSubmit ===')
-      this.props.onFinalSubmit()
+      console.log("onFinalSubmit ===");
+      this.props.onFinalSubmit();
       return;
     }
 
